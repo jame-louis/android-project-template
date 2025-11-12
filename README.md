@@ -1,4 +1,8 @@
 # Android项目模板
+
+[![Android CI](https://github.com/jame-louis/android-project-template/actions/workflows/android.yml/badge.svg)](https://github.com/jame-louis/android-project-template/actions/workflows/android.yml)
+
+
 android project template 
 
 ## 开发环境
