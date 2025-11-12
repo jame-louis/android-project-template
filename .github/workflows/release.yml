@@ -67,6 +67,10 @@ jobs:
       - name: Build app bundle release (AAB) - ${{ env.main_project_module }} module
         run: ./gradlew ${{ env.main_project_module }}:bundleRelease
 
+      - name: Find and display APK paths
+        run: |
+          echo "Searching for APK files..."
+          find . -type f -name "*.apk" | sort
       # Upload Artifact Build
       # Noted For Output [main_project_module]/build/outputs/apk/debug/
       - name: Upload APK Debug - ${{ env.repository_name }}
