@@ -47,8 +47,8 @@ jobs:
         run: chmod +x ./gradlew
 
       # Run Tests Build
-      # - name: Run gradle tests
-      #  run: ./gradlew test
+      - name: Run gradle tests
+        run: ./gradlew test
 
       # Run Build Project
       - name: Build gradle project
@@ -92,3 +92,6 @@ jobs:
         with:
           name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - App bundle(s) AAB release generated
           path: android/${{ env.main_project_module }}/build/outputs/bundle/release/
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref_type == 'tag'
