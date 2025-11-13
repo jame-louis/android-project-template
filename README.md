@@ -1,7 +1,7 @@
-# Android项目模板
-
 [![Android CI](https://github.com/jame-louis/android-project-template/actions/workflows/android.yml/badge.svg)](https://github.com/jame-louis/android-project-template/actions/workflows/android.yml)
+[![Release CI](https://github.com/jame-louis/android-project-template/actions/workflows/release.yml/badge.svg)](https://github.com/jame-louis/android-project-template/actions/workflows/release.yml)
 
+# Android项目模板
 
 android project template 
 
