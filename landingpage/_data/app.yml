@@ -1,0 +1,16 @@
+name: Hello World 
+description:  A simple mobile app that does nothing but say "Hello World!"
+full_description: 'A simple mobile app that does nothing but say "Hello World!"<br>
+<br>With a lot of features:
+<br>- Say "Hello World!"
+<br>- in center of screen
+<br>- from android project template'
+android: https://jame-louis.github.io/android-project-template/
+iOS: https://jame-louis.github.io/android-project-template/
+web: https://jame-louis.github.io/android-project-template/ 
+screenshots:
+  - 1.png
+  - 2.png
+  - 3.png
+  - 4.png
+
