@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main 
+    paths:
+      - 'landingpage/**'
+      - '.github/workflows/deploy.yml' 
   workflow_dispatch:
 
 permissions:
@@ -38,6 +41,7 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        working-directory: ./landingpage
 
       - name: Set repository name as env variable
         run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
@@ -46,6 +50,7 @@ jobs:
         env:
           PUBLIC_PATH: '/${{ env.repository_name }}/assets/'
         run: npm run build
+        working-directory: ./landingpage
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
