@@ -88,7 +88,7 @@ jobs:
       # Example use of `signedReleaseFile` output -- not needed
       - uses: actions/upload-artifact@v4
         with:
-          name: Signed app bundle
+          name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK(s) release generated
           path: ${{steps.sign_app.outputs.signedReleaseFile}}
         
       - name: Find and display APK paths
@@ -121,7 +121,9 @@ jobs:
         run: |
           echo "project info"
           echo ${{ github.ref_type }}
-          
+      # https://github.com/marketplace/actions/gh-release     
       - name: Release
         uses: softprops/action-gh-release@v2
         if: github.ref_type == 'tag'
+        with:
+          files: ${{steps.sign_app.outputs.signedReleaseFile}}
