@@ -38,6 +38,7 @@ jobs:
         with:
           ruby-version: '3.0'
           bundler-cache: true
+          bundler: 'latest'
 
       - name: Install dependencies
         run: npm ci
