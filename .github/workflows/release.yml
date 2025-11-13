@@ -24,7 +24,10 @@ jobs:
     defaults:
           run:
             working-directory: ./android
-        
+            
+    permissions:
+      contents: write
+      
     steps:
       - uses: actions/checkout@v4
 
