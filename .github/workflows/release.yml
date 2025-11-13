@@ -89,6 +89,11 @@ jobs:
         run: |
           mv ../${{steps.sign_app.outputs.signedReleaseFile}} \
              app/build/outputs/apk/release/${{ env.repository_name }}.apk
+
+      - name: Create custom zip
+        run: |
+          cd app/build/outputs/apk/release/
+          zip "${{ env.repository_name }}-${{ env.date_today }}.zip" ${{ env.repository_name }}.apk
        
       # Example use of `signedReleaseFile` output -- not needed
       - uses: actions/upload-artifact@v4
@@ -131,5 +136,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: github.ref_type == 'tag'
         with:
-          files: android/${{ env.main_project_module }}/build/outputs/apk/release/${{ env.repository_name }}.apk
-          name: ${{ env.repository_name }} apk
+          files: android/${{ env.main_project_module }}/build/outputs/apk/release/${{ env.repository_name }}-${{ env.date_today }}.zip
+          generate_release_notes: true
