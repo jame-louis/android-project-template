@@ -5,7 +5,7 @@ full_description: 'A simple mobile app that does nothing but say "Hello World!"<
 <br>- Say "Hello World!"
 <br>- in center of screen
 <br>- from android project template'
-android: https://jame-louis.github.io/android-project-template/
+android: https://github.com/jame-louis/android-project-template/releases/download/v0.1.2/android-project-template-2025-11-13.zip
 iOS: https://jame-louis.github.io/android-project-template/
 web: https://jame-louis.github.io/android-project-template/ 
 screenshots:
