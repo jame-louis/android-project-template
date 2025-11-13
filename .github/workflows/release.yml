@@ -87,8 +87,8 @@ jobs:
           
       - name: Rename APK
         run: |
-          mv ${{steps.sign_app.outputs.signedReleaseFile}} \
-             android/app/build/outputs/apk/release/${{ env.repository_name }}.apk
+          mv ../${{steps.sign_app.outputs.signedReleaseFile}} \
+             app/build/outputs/apk/release/${{ env.repository_name }}.apk
        
       # Example use of `signedReleaseFile` output -- not needed
       - uses: actions/upload-artifact@v4
