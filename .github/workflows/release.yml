@@ -94,7 +94,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK(s) release generated
-          path: android/${{ env.main_project_module }}/build/outputs/apk/release/${{ env.playstore_name }}.apk
+          path: android/${{ env.main_project_module }}/build/outputs/apk/release/${{ env.repository_name }}.apk
         
       - name: Find and display APK paths
         run: |
@@ -131,4 +131,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: github.ref_type == 'tag'
         with:
-          files: android/${{ env.main_project_module }}/build/outputs/apk/release/${{ env.playstore_name }}.apk
+          files: android/${{ env.main_project_module }}/build/outputs/apk/release/${{ env.repository_name }}.apk
